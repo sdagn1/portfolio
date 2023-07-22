@@ -1,6 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 
+/*
+  Main things to include:
+    - Header introducing me
+    - Education
+    - Work Experience
+
+*/
+
 function App() {
   return (
     <div className="App">
