@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 /*
@@ -7,27 +6,31 @@ import './App.css';
     - Education
     - Work Experience
 
+
+
+    Do I want to go for a sidebar design or a top-down
+
+
+    - I feel sidebar can better show off certain things
+
+
+    - top-bar could be good
 */
 
-function App() {
+function Portfolio() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div class="flex flex-row">
+      <div class="bg-green-100 w-1/5 h-screen flex flex-col">
+        <div>
+
+        </div>
+
+      </div>
+      <div class="flex-grow h-screen">
+
+      </div>
     </div>
   );
 }
 
-export default App;
+export default Portfolio;
