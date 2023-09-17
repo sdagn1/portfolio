@@ -1,7 +1,19 @@
 import './App.css';
 import React, {useState} from 'react';
+import {FaBriefcase, FaCogs, FaGraduationCap, FaUser} from 'react-icons/fa';
 
 /*
+
+  Sidebar:
+    - A scrolling effect when going between them
+    - Social Links (at bottom of sidebar)
+
+  Main tabs:
+    - Add UxV controller project
+    - Look into slideshow functionality
+    - Design expand/close assets
+
+
   Main things to include:
     - Header introducing me
     - Education
@@ -51,6 +63,7 @@ const tetrisTags = ["Python", "PyTorch", "PyQt5", "TensorBoard"]
 class SectionTag extends React.Component{
   render(){
     return(
+      
       <a href={"#"+ this.props.link} class="text-white text-3xl my-3 hover:font-bold self-start">
         {this.props.tag}
       </a>
@@ -143,7 +156,7 @@ function Topic(props){
 function Portfolio() {
   return (
     <div class="flex flex-row">
-      <div class="bg-green-300 w-1/5 h-full flex flex-col items-center p-8 fixed">
+      <div class="bg-emerald-400 w-1/5 h-full flex flex-col items-center p-8 fixed">
         <div class="overflow-hidden rounded-full border-solid border-white border border-4 mb-5">
           <img src={require("./images/IMG_20220111_152212_418.jpg")} alt="SamJak" width="200"/>
         </div>
@@ -155,12 +168,23 @@ function Portfolio() {
 
         <div class="flex-col flex w-3/5">
           <div class="flex flex-row">
+            <FaUser class="self-center text-white text-3xl mr-2"/>
             <SectionTag link="" tag="About Me" />
           </div>
 
-          <SectionTag link="exp" tag="Experience" />
-          <SectionTag link="edu" tag="Education" />
+          <div class="flex flex-row">
+          <FaBriefcase class="self-center text-white text-3xl mr-2"/>
+            <SectionTag link="exp" tag="Experience" />
+          </div>
+          <div class="flex flex-row">
+            <FaGraduationCap class="self-center text-white text-3xl mr-2"/>
+            <SectionTag link="edu" tag="Education" />
+          </div>
+          <div class="flex flex-row">
+          <FaCogs class="self-center text-white text-3xl mr-2"/>
           <SectionTag link="pro" tag="Projects" />
+          </div>
+          
         </div>
 
       </div>
@@ -180,8 +204,8 @@ Currently looking for internship/placement positions for Summer 2023.
         <Topic title="University of Warwick" blurb={eduBlurb} tags={eduTags} imgName="warwick"/>
         <SectionTitle id="pro" title="Projects"/>
         <Topic title="Mento" blurb={mentoBlurb} tags={mentoTags} imgName="mento31"/>
-        <Topic title="Tetris Deep Learning" blurb={tetrisBlurb} tags={tetrisTags} imgName="SamJak"/>
-        <Topic title="Smart Timeout" blurb={timeBlurb} tags={timeTags} imgName="SamJak"/>
+        <Topic title="Using Deep Reinforcement Learning to Solve Tetris" blurb={tetrisBlurb} tags={tetrisTags} imgName="SamJak"/>
+        <Topic title="Smart Timeout" blurb={timeBlurb} tags={timeTags} imgName="circle-Logo"/>
         <div class="text-white">aaa</div>
 
 
