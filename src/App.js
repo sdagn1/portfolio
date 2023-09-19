@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import {FaArrowLeft, FaBriefcase, FaCogs, FaGraduationCap, FaUser, FaArrowRight} from 'react-icons/fa';
+import {FaArrowLeft, FaBriefcase, FaCogs, FaGraduationCap, FaUser, FaArrowRight, FaGithub, FaLinkedin, FaFacebook} from 'react-icons/fa';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import {RxDotFilled} from 'react-icons/rx';
 
@@ -8,7 +8,6 @@ import {RxDotFilled} from 'react-icons/rx';
 
   Content:
 
-    Lorax and Uni probably don't need "more" sections - implement the code for that once you have everything else o7
 
     - Blurbs
     - Slideshow images
@@ -27,11 +26,6 @@ import {RxDotFilled} from 'react-icons/rx';
     - Look into slideshow scrolling
     - Design expand/close assets
 
-
-  Main things to include:
-    - Header introducing me
-    - Education
-    - Work Experience
 
 
 
@@ -78,8 +72,21 @@ const mentoBlurb = (<div>A web application designed to initiate and facilitate m
                     <br/>
                      Was entered into a competition judged by <b>Deutsche Bank and was awarded second place</b> for our efforts. Worked as a joint project manager for this project.</div>)
 const mentoTags = ["Spring Boot", "Vaadin", "MySQL", "Java", "GitHub", "DigitalOcean"]
-const mentoSlides = []
-const mentoMore =(<div></div>)
+const mentoSlides = [
+  "./images/Mento/home.png",
+  "./images/Mento/dashboard.png",
+  "./images/Mento/mentor.png",
+  "./images/Mento/meeting.png"
+]
+const mentoMore =(<div>
+      For this project, I worked in a group of 7 to implement the deliverables requested by Deutsche Bank. This included allowing users to create a profile as a mentor/mentee listing their interests on the software, which would then create recommendations for pairings based on matching interests.
+      Pairings would be able to request meetings with on another, create milestones with deadlines that can be tracked and analysed, as well as including chat functionality between mentor and mentee. Reviews could also be written about mentors, in which we implemented a pre-trained NLP agent to more intricately detect whether a review was positive or negative, which would then be 
+      used for future recommendations for new pairings.
+      <br/>
+      <br/>
+      Initially in this project, I worked on the front-end of the application, learning Vaadin for the first time and using its tools to produce the general dashboard interface, in addition to being the one in charge of linking the back-end databases produced from other members to the front-end dashboard I produced.
+      As time went on however, I took on more responsibility within the project, working as a full-stack developer and becoming the joint project manager, helping other members learn the framework and overseeing their progress.
+</div>)
 
 const timeBlurb = (<div>An Android/iOS mobile application aimed for parents with children that have learning disabilities, providing an assortment of tools to prepare the child for time-out whilst providing useful advice. 
                   <br/> <br/>
@@ -90,6 +97,12 @@ const timeTags = ["JavaScript", "Android Studio", "Apache Cordova"]
 const timeMore = (<div>Initially, this application had a rough framework written in Swift, which I was able to convert it into Javascript/HTML using the Apache Cordova framework, with Android Studio used to emulate the app.
                   
 </div>)
+const timeSlides = [
+  "./images/SmartTimeout/SmartTimeoutHome.png",
+  "./images/SmartTimeout/SmartTimeoutTimer.png",
+  "./images/SmartTimeout/SmartTimeoutSettings.png"
+  
+]
 
 const tetrisBlurb = (<div>An independent research project in my third year of study aimed to apply deep reinforcement learning techniques using Python and PyTorch in order to train a deep neural network how to play and subsequently master the puzzle game Tetris.<br/><br/> For this study I was awarded a First with a mark of 86 overall.</div>)
 const tetrisTags = ["Python", "PyTorch", "PyQt5", "TensorBoard"]
@@ -157,7 +170,7 @@ function SlideShow(props){
   return(
 
     <div class="relative w-full m-auto h-[600px] group">
-      <div style={{backgroundImage: `url(${require("" + eduSlides[currentIndex])})`}} className="w-full h-full bg-center bg-cover duration-500">
+      <div style={{backgroundImage: `url(${require("" + props.slides[currentIndex])})`}} className="w-full h-full bg-center bg-contain bg-no-repeat duration-500">
           
       </div>
 
@@ -197,10 +210,10 @@ function Topic(props){
     if(props.more){
       moreDisplay = (            
         <div class={"text-1xl transition-all ease-in-out duration-100 " + (isReadMore ? "animate-fadeIn" : "animate-fadeOut hidden")} >
-          <div class="py-5">
+          <div class="py-5 text-lg">
           {props.moreBlurb}
           </div>
-        <SlideShow slides={eduSlides} />
+        <SlideShow slides={props.slides} />
     </div>)
 
         moreButton = (
@@ -224,7 +237,7 @@ function Topic(props){
             <div class="text-left italic text-2xl my-2">
               {props.job}
             </div>
-            <div className='text-1xl my-2 pr-2'>
+            <div className='text-lg my-2 pr-2'>
               {props.blurb}
             </div>
             {moreDisplay}
@@ -266,6 +279,10 @@ function Topic(props){
   }
 
 function Portfolio() {
+  const openInNewTab = (url) => {
+    window.open(url, "_blank", "noreferrer");
+  };
+
   return (
     <div class="flex flex-row">
       <div class="bg-emerald-400 w-1/5 h-full flex flex-col items-center p-8 fixed">
@@ -275,6 +292,11 @@ function Portfolio() {
 
         <div class="text-white font-bold text-4xl">
           Sam Dagnall
+        </div>
+
+        <div class="flex flex-row my-4 justify-between w-2/5">
+          <FaGithub class="text-white text-4xl cursor-pointer hover:text-gray-200" onClick={() => openInNewTab("https://github.com/sdagn1")} />
+          <FaLinkedin class="text-white text-4xl cursor-pointer hover:text-gray-200" onClick={() => openInNewTab("https://www.linkedin.com/in/sam-dagnall-116b78251/")}/>
         </div>
         
 
@@ -296,7 +318,7 @@ function Portfolio() {
           <FaCogs class="self-center text-white text-3xl mr-2"/>
           <SectionTag link="pro" tag="Projects" />
           </div>
-          
+
         </div>
 
       </div>
@@ -318,9 +340,9 @@ function Portfolio() {
         <Topic title="University of Warwick" job="MEng Computer Science" blurb={eduBlurb} tags={eduTags} more={false} imgName="warwick"/>
         <SectionTitle id="pro" title="Projects"/>
         <Topic title="Data to Synthethic Environment for UxV Control" blurb={uxvBlurb} tags={uxvTags} more={false} imgName="SamJak"/>
-        <Topic title="Mento" blurb={mentoBlurb} tags={mentoTags} more={true} moreBlurb={mentoMore} imgName="mento31"/>
-        <Topic title="Using Deep Reinforcement Learning to Solve Tetris" blurb={tetrisBlurb} tags={tetrisTags} more={true} moreBlurb={tetrisMore} imgName="SamJak"/>
-        <Topic title="Smart Timeout" blurb={timeBlurb} tags={timeTags} more={true} moreBlurb={timeMore} imgName="circle-Logo"/>
+        <Topic title="Mento" blurb={mentoBlurb} tags={mentoTags} more={true} moreBlurb={mentoMore} imgName="mento31" slides={mentoSlides}/>
+        <Topic title="Using Deep Reinforcement Learning to Solve Tetris" blurb={tetrisBlurb} tags={tetrisTags} more={true} moreBlurb={tetrisMore} imgName="SamJak" slides={eduSlides}/>
+        <Topic title="Smart Timeout" blurb={timeBlurb} tags={timeTags} more={true} moreBlurb={timeMore} imgName="circle-Logo" slides={timeSlides}/>
         <div class="text-white">aaa</div>
 
 
