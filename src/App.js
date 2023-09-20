@@ -116,6 +116,11 @@ const tetrisMore = (<div>After building Tetris from scratch in Python, I researc
                     <br/> <br/>
                     Whilst the agent was less successful than pre-existing AI solutions, from research papers found using the same algorithm my solution was <b> &gt; 5 times</b> more successful on average.   
                      </div>)
+const tetrisSlides = [
+  "./images/Tetris/grid.png",
+  "./images/Tetris/decision.png",
+  "./images/Tetris/agent.png"
+]
 
 
 const uxvBlurb = (<div>This project is in direct collaboration with Thales, and is focused on tackling the problem of improving perception for human controlled UxVs in low visibility environments such as fog/smoke or at night where a standard camera feed is unsuitable.
@@ -174,10 +179,10 @@ function SlideShow(props){
           
       </div>
 
-      <div class="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 cursor-pointer transition-opacity duration-500">
+      <div class="hidden group-hover:block hover:text-gray-500 absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 cursor-pointer transition-opacity duration-500">
         <FaArrowLeft onClick={prevSlide} size={30}/>
       </div>
-      <div class="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 cursor-pointer">
+      <div class="hidden group-hover:block hover:text-gray-500  absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 cursor-pointer">
         <FaArrowRight onClick={nextSlide} size={30}/>
       </div>
       <div class="flex top-4 justify-center py-2">
@@ -339,9 +344,9 @@ function Portfolio() {
         <SectionTitle id="edu" title="Education" />
         <Topic title="University of Warwick" job="MEng Computer Science" blurb={eduBlurb} tags={eduTags} more={false} imgName="warwick"/>
         <SectionTitle id="pro" title="Projects"/>
-        <Topic title="Data to Synthethic Environment for UxV Control" blurb={uxvBlurb} tags={uxvTags} more={false} imgName="SamJak"/>
+        <Topic title="Data to Synthethic Environment for UxV Control" blurb={uxvBlurb} tags={uxvTags} more={false} imgName="thales"/>
         <Topic title="Mento" blurb={mentoBlurb} tags={mentoTags} more={true} moreBlurb={mentoMore} imgName="mento31" slides={mentoSlides}/>
-        <Topic title="Using Deep Reinforcement Learning to Solve Tetris" blurb={tetrisBlurb} tags={tetrisTags} more={true} moreBlurb={tetrisMore} imgName="SamJak" slides={eduSlides}/>
+        <Topic title="Using Deep Reinforcement Learning to Solve Tetris" blurb={tetrisBlurb} tags={tetrisTags} more={true} moreBlurb={tetrisMore} imgName="SamJak" slides={tetrisSlides}/>
         <Topic title="Smart Timeout" blurb={timeBlurb} tags={timeTags} more={true} moreBlurb={timeMore} imgName="circle-Logo" slides={timeSlides}/>
         <div class="text-white">aaa</div>
 
