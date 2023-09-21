@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from 'react';
-import {FaArrowLeft, FaBriefcase, FaCogs, FaGraduationCap, FaUser, FaArrowRight, FaGithub, FaLinkedin, FaFacebook} from 'react-icons/fa';
+import {FaArrowLeft, FaBriefcase, FaCogs, FaGraduationCap, FaUser, FaArrowRight, FaGithub, FaLinkedin} from 'react-icons/fa';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
 import {RxDotFilled} from 'react-icons/rx';
 
@@ -53,13 +53,10 @@ import {RxDotFilled} from 'react-icons/rx';
 */
 
 
-const eduBlurb = (<div>Achieved a First Class in all years of study at the university so far. Currently studying 23/24 for my Integrated Masters degree in Computer Science </div>)
+const eduBlurb = (<div>Achieved a First Class grade in all years of study at the university so far, and am predicted to get a First Class for the entire degree. Currently studying 23/24 for the 4th year in my Integrated Masters degree in Computer Science.
+  <br/><br/>
+  Have taken on numerous different modules covering areas such as software development, machine learning, robotics, and project management. </div>)
 const eduTags =["Java", "C", "Python", "SQL", "C++", "Haskell"]
-const eduSlides = [
-  "./images/SamJak.png",
-  "./images/warwick.png",
-  "./images/lorax.png"
-]
 
 const loraxBlurb = (<div>Worked as a intern developer across two summers for a collective 6 months of industry experience. 
                     Was able to work directly with the CTO to learn the proprietary software and implement live changes to both the front-end and back-end of the system in addition to system testing and customer support. 
@@ -168,9 +165,6 @@ function SlideShow(props){
     const nextSlide = () => {
       setCurrentIndex(Math.min(props.slides.length-1, currentIndex + 1));
     }
-    const goToSlide = (slideIndex) => {
-      setCurrentIndex(slideIndex);
-    }
 
   return(
 
@@ -251,7 +245,7 @@ function Topic(props){
 
           </div>
           <div class="justify-self-end w-1/5">
-            <img src={require("./images/" + props.imgName + ".png")} alt="SamJak" width="200"/>
+            <img src={require("./images/" + props.imgName + ".png")} alt={props.imgName} width="200"/>
           </div>
         </div>
         <div class="flex-row flex justify-between">
@@ -265,11 +259,6 @@ function Topic(props){
           <div class="flex justify-end w-1/5">
 
             {moreButton}
-            {/*
-            <img src={isReadMore ? require("./images/smallMinus.png") : require("./images/SamJak.png")} alt="Read More" width="50" onClick={toggleReadMore}
-                 class={(isReadMore ? "bg-[url('./images/minus.png')]" : "bg-[url('./images/SamJak.png')]") + " hover:invisible"}
-             />
-            */}
 
 
           </div>
@@ -292,7 +281,7 @@ function Portfolio() {
     <div class="flex flex-row">
       <div class="bg-emerald-400 w-1/5 h-full flex flex-col items-center p-8 fixed">
         <div class="overflow-hidden rounded-full border-solid border-white border border-4 mb-5">
-          <img src={require("./images/IMG_20220111_152212_418.jpg")} alt="SamJak" width="200"/>
+          <img src={require("./images/IMG_20220111_152212_418.jpg")} alt="Sam Dagnall" width="200"/>
         </div>
 
         <div class="text-white font-bold text-4xl">
@@ -346,7 +335,7 @@ function Portfolio() {
         <SectionTitle id="pro" title="Projects"/>
         <Topic title="Data to Synthethic Environment for UxV Control" blurb={uxvBlurb} tags={uxvTags} more={false} imgName="thales"/>
         <Topic title="Mento" blurb={mentoBlurb} tags={mentoTags} more={true} moreBlurb={mentoMore} imgName="mento31" slides={mentoSlides}/>
-        <Topic title="Using Deep Reinforcement Learning to Solve Tetris" blurb={tetrisBlurb} tags={tetrisTags} more={true} moreBlurb={tetrisMore} imgName="SamJak" slides={tetrisSlides}/>
+        <Topic title="Using Deep Reinforcement Learning to Solve Tetris" blurb={tetrisBlurb} tags={tetrisTags} more={true} moreBlurb={tetrisMore} imgName="tetrisThumbNail" slides={tetrisSlides}/>
         <Topic title="Smart Timeout" blurb={timeBlurb} tags={timeTags} more={true} moreBlurb={timeMore} imgName="circle-Logo" slides={timeSlides}/>
         <div class="text-white">aaa</div>
 
