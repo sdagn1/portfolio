@@ -141,7 +141,7 @@ class SectionTag extends React.Component{
 class SectionTitle extends React.Component{
   render(){
     return(
-      <div id={this.props.id} class="font-bold text-4xl text-left m-5 w-3/5">
+      <div id={this.props.id} class="font-bold text-4xl text-left m-5 w-3/5 truncate">
         {this.props.title}
       </div>
 
@@ -225,7 +225,7 @@ function Topic(props){
 
     return (
 
-      <div class={"border border-solid flex-col border-5 border-black m-5 p-5 w-3/5 rounded-lg shadow-lg transition-all ease-in-out duration-100 " + (isReadMore ? "max-h-[2000px]" : "max-h-96" )}>
+      <div class={"border border-solid flex-col border-5 border-black m-5 p-5 w-3/5 rounded-lg shadow-lg transition-all ease-in-out duration-100 overflow-clip " + (isReadMore ? "max-h-[2000px]" : (props.more ? "max-h-[25rem]" : "max-h-full") )}>
         
         <div class="flex-row flex pb-10">
 
@@ -301,7 +301,7 @@ function Portfolio() {
           </div>
 
           <div class="flex flex-row">
-          <FaBriefcase class="self-center text-white text-3xl mr-2"/>
+          <FaBriefcase class="self-center text-white text-3xl mr-2 "/>
             <SectionTag link="exp" tag="Experience" />
           </div>
           <div class="flex flex-row">
