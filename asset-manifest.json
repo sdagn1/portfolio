@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/portfolio/static/css/main.8ec0d548.css",
+    "main.js": "/portfolio/static/js/main.dadcea30.js",
+    "static/js/787.1ed0c42c.chunk.js": "/portfolio/static/js/787.1ed0c42c.chunk.js",
+    "static/media/IMG_20220111_152212_418.jpg": "/portfolio/static/media/IMG_20220111_152212_418.2f5784cfa2b9ca9d480f.jpg",
+    "static/media/SamJak.png": "/portfolio/static/media/SamJak.624a1169510a28c7873e.png",
+    "static/media/mentor.png": "/portfolio/static/media/mentor.7029ab5931e65836665b.png",
+    "static/media/meeting.png": "/portfolio/static/media/meeting.98e9e68abfd390425cec.png",
+    "static/media/dashboard.png": "/portfolio/static/media/dashboard.001ef11ca5de80f12224.png",
+    "static/media/home.png": "/portfolio/static/media/home.32852ece2e4fd92a37fe.png",
+    "static/media/SmartTimeoutHome.png": "/portfolio/static/media/SmartTimeoutHome.90dcc531f58fba4d3300.png",
+    "static/media/decision.png": "/portfolio/static/media/decision.1fef47e3a171c826979a.png",
+    "static/media/mento31.png": "/portfolio/static/media/mento31.826bcbeaeea28b5d5164.png",
+    "static/media/SmartTimeoutSettings.png": "/portfolio/static/media/SmartTimeoutSettings.c5a755a3f1d77728eaab.png",
+    "static/media/warwick.png": "/portfolio/static/media/warwick.e50a88ec60632b3f88a6.png",
+    "static/media/SmartTimeoutTimer.png": "/portfolio/static/media/SmartTimeoutTimer.7e1ba131ee6f4aff6f77.png",
+    "static/media/circle-Logo.png": "/portfolio/static/media/circle-Logo.4287e92d04aab0b3c6d5.png",
+    "static/media/agent.png": "/portfolio/static/media/agent.be2c46c83afb1bd8dd70.png",
+    "static/media/lorax.png": "/portfolio/static/media/lorax.d0df59d27a4ea9873517.png",
+    "static/media/grid.png": "/portfolio/static/media/grid.90731981e8ccca5eae49.png",
+    "static/media/4115525.png": "/portfolio/static/media/4115525.74a7db29611551f4d5f7.png",
+    "static/media/thales.png": "/portfolio/static/media/thales.2b35cf9a7051ec73cdc9.png",
+    "static/media/logo.svg": "/portfolio/static/media/logo.6ce24c58023cc2f8fd88.svg",
+    "index.html": "/portfolio/index.html",
+    "main.8ec0d548.css.map": "/portfolio/static/css/main.8ec0d548.css.map",
+    "main.dadcea30.js.map": "/portfolio/static/js/main.dadcea30.js.map",
+    "787.1ed0c42c.chunk.js.map": "/portfolio/static/js/787.1ed0c42c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8ec0d548.css",
+    "static/js/main.dadcea30.js"
+  ]
+}
